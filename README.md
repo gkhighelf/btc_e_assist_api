@@ -1,7 +1,7 @@
-BTC-eTradeApi for BTC-E. Version 1.2
+Assist TradeApi for BTC-E. Version 1.2
 ====================================
 
-Java library for  simple and comfortable use of BTC-e API.
+###Java library for  simple and comfortable use of BTC-e API.
 
 Private BTC-E API documentation https://btc-e.com/api/documentation
 
@@ -9,7 +9,6 @@ Public BTC-E API documentation https://btc-e.com/api/3/documentation
 
 
 If you want to build the library yourself, you will need:
-
 ####Jackson library http://wiki.fasterxml.com/Home
 ####Apache Commons Codec (TM) http://commons.apache.org/proper/commons-codec/
 
