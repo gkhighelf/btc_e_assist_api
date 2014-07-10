@@ -71,7 +71,7 @@ System.out.println(t.getInfo.getBalance("usd")); // get USD balance. We can get 
 
 TradeApi is the Main class, that contains other objects with public modifiers and private objects for some usefull methods as tryMaximumBuy(...) and other.
 
-Example of using this library you also can see in BTC-e Assist app, tradeControl class. https://github.com/alexandersjn/btc-e-assist
+Example of using this library you also can see in BTC-e Assist app, TradeControl class: https://github.com/alexandersjn/btc-e-assist/blob/master/src/com/btc_e_assist/TradeControl.java
 
 ###Donation:
 
