@@ -23,9 +23,9 @@ Common algorithm:
 - ???
 - PROFIT
 
-If you will use it in loop, not forget call resetParams, otherwise parametres string will be as: "...btc_usd-btc-usd" and server return error. 
+If you use it in loop, do not forget to call resetParams, otherwise parametres string will be as: "...btc_usd-btc-usd" and server return error. 
 
-Note: by default, if you add nonexistent pair (but not dublicate), library set "ignore invalid" to "true" and you can get valid answer, but without nonexistent pair. You can change this behavior, if call method setReverseIgnoreInvalid(), it reverse API method state, or you can get valid pairs list from Info API method.
+Note: by default, if you add nonexistent pair (but not duplicate), library set "ignore invalid" to "true" and you can get valid answer, but without nonexistent pair. You can change this behavior, if call method setReverseIgnoreInvalid(), it reverse API method state, or you can get valid pairs list from Info API method.
 
 ###Examples:
 
@@ -70,6 +70,8 @@ System.out.println(t.getInfo.getBalance("usd")); // get USD balance. We can get 
 ```
 
 TradeApi is the Main class, that contains other objects with public modifiers and private objects for some usefull methods as tryMaximumBuy(...) and other.
+
+Example of using this library you also can see in BTC-e Assist app, tradeControl class. https://github.com/alexandersjn/btc-e-assist
 
 ###Donation:
 
