@@ -10,7 +10,7 @@ abstract class PrivateMultipleResponse extends PrivateBaseClass {
 
 	protected String current_position;
 
-	public synchronized void setData(InputStream json) {
+	protected synchronized void setData(InputStream json) {
 		try {
 			rootNode = null;
 			it = null;
@@ -30,53 +30,6 @@ abstract class PrivateMultipleResponse extends PrivateBaseClass {
 		} catch (Exception e) {
 		}
 		makeDefaultRootNode();
-	}
-
-	/**
-	 * default 0
-	 * 
-	 * @param str
-	 * @throws NoSuchMethodException
-	 */
-	public synchronized void setFrom(String str) throws NoSuchMethodException {
-		paramsMap.put("from", str);
-	}
-
-	/**
-	 * default 1000
-	 * 
-	 * @param str
-	 * @throws NoSuchMethodException
-	 */
-	public synchronized void setCount(String str) throws NoSuchMethodException {
-		paramsMap.put("count", str);
-	}
-
-	public synchronized void setFrom_id(String str)
-			throws NoSuchMethodException {
-		paramsMap.put("from_id", str);
-	}
-
-	public synchronized void setEnd_id(String str) throws NoSuchMethodException {
-		paramsMap.put("end_id", str);
-	}
-
-	/**
-	 * DESC or ASC sort type, default DESC
-	 * 
-	 * @param str
-	 * @throws NoSuchMethodException
-	 */
-	public synchronized void setOrder(String str) throws NoSuchMethodException {
-		paramsMap.put("order", str.toUpperCase());
-	}
-
-	public synchronized void setSince(String str) throws NoSuchMethodException {
-		paramsMap.put("since", str);
-	}
-
-	public synchronized void setEnd(String str) throws NoSuchMethodException {
-		paramsMap.put("end", str);
 	}
 
 	public synchronized String getCurrentAmount() {

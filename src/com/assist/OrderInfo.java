@@ -1,17 +1,17 @@
 package com.assist;
 
-public class ActiveOrders extends PrivateMultipleResponse {
-	public ActiveOrders(PrivateNetwork nt) {
+public class OrderInfo extends PrivateMultipleResponse {
+	public OrderInfo(PrivateNetwork nt) {
 		super();
 		network = nt;
 	}
 
-	public synchronized void setPair(String str) {
-		paramsMap.put("pair", str.replace('-', '_').toLowerCase());
+	public synchronized void setOrder_id(String str) {
+		paramsMap.put("order_id", str.toUpperCase());
 	}
 
 	public synchronized boolean runMethod() {
-		setData(network.sendRequest("ActiveOrders", getParams(),
+		setData(network.sendRequest("OrderInfo", getParams(),
 				connectTimeoutMillis, readTimeoutMillis));
 		return success;
 	}
@@ -26,6 +26,11 @@ public class ActiveOrders extends PrivateMultipleResponse {
 				.asText();
 	}
 
+	public synchronized String getCurrentStart_amount() {
+		return formatDouble(rootNode.path("return").path(current_position)
+				.path("start_amount").asDouble());
+	}
+
 	public synchronized String getCurrentRate() {
 		return formatDouble(rootNode.path("return").path(current_position)
 				.path("rate").asDouble());
@@ -37,7 +42,8 @@ public class ActiveOrders extends PrivateMultipleResponse {
 	}
 
 	/**
-	 * Deprecated, is always equal to 0.
+	 * 0 - active, 1 - executed order, 2 - canceled, 3 - canceled, but was
+	 * partially executed.
 	 * 
 	 * @return current status
 	 */
